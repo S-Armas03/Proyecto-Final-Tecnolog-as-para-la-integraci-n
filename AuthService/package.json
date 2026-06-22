@@ -1,0 +1,24 @@
+{
+  "name": "authservice",
+  "version": "1.0.0",
+  "description": "Servicios de Autenticación (AuthService)\r o Login: Permite autenticar usuarios mediante credenciales válidas (usuario y\r contraseña) para obtener acceso al sistema.\r • Reglas de negocio:\r − Solo usuarios registrados y activos pueden iniciar sesión.\r − Datos obligatorios: usuario y contraseña.\r − Generar token de autenticación.\r − El token deberá de usarse como mecanismo de autenticación para el\r consumo de los otros servicios.\r • Validaciones:\r − Validar los datos obligatorios.\r − Verificar existencia del usuario en la base de datos y verificar que la\r contraseña sea correcta.\r − Validar el tamaño de los campos\r • Respuesta:\r − Datos (idUsuario, idRol, rol, usuario, nombre completo, idTipoUsuario y\r tipo de usuario) del usuario y el token.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.20.0"
+  }
+}
