@@ -20,5 +20,17 @@ exports.login = async (user) => {
         return ResponseLogin.fail("contraseña incorrecta, verifica las credenciales");
     }
     const token = generateToken(data);
-    return ResponseLogin.success(data, token);
+    return{
+        message: "Bienvenido",
+        data: {
+            idUsuario: data.idUsuario,
+            idRol: data.idRol,
+            rol: data.rol,
+            usuario: data.username,
+            nombreCompleto: `${data.nombre} ${data.apellidoPaterno} ${data.apellidoMaterno || ''}`.trim(),
+            idTipoUsuario: data.idTipoUsuario,
+            tipoUsuario: data.tipoUsuario,
+            token: token
+        }
+    }
 };

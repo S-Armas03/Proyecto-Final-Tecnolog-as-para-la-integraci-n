@@ -4,7 +4,8 @@ exports.login = async (user) => {
   const query = `
   SELECT 
   "idUsuario", "nombre", "apellidoPaterno", "apellidoMaterno",
-  "username", "password", "idRol", "rol", "estatus" 
+  "username", "password", "idRol", "rol", "estatus",
+  "idTipoUsuario", "tipoUsuario"
   FROM "usuarioFullInfo" 
   WHERE username = $1
   `;

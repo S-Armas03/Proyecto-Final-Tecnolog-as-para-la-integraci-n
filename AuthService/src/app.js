@@ -8,6 +8,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/sisga/auth/api", authRoutes);
+app.use("/sicae/auth/api", authRoutes);
 
 module.exports = app;
