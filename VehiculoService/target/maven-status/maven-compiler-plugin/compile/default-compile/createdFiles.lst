@@ -1,0 +1,11 @@
+fei\vehiculo\dto\VehiculoResponse.class
+fei\vehiculo\model\Vehiculo.class
+fei\vehiculo\dto\VehiculoRequest.class
+fei\vehiculo\model\Marca.class
+fei\vehiculo\controllers\VehiculoController.class
+fei\vehiculo\resources\JakartaEE11Resource.class
+fei\vehiculo\repositories\VehiculoRepository.class
+fei\vehiculo\services\VehiculoService.class
+fei\vehiculo\model\Modelo.class
+fei\vehiculo\config\MyBatisUtil.class
+fei\vehiculo\JakartaRestConfiguration.class
