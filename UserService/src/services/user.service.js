@@ -1,22 +1,23 @@
 const userRepository = require('../repositories/user.repository');
-const generateToken = require('../config/jwt');
 const { hashPassword } = require('../utils/bcrypt');
+const generateClave = require('../utils/generateClave');
 
 class UserService {
     async registrarUsuario(userData) {
-        const userExiste = await userReository.findByUsername(userData.username, userData.email);
+        const userExiste = await userRepository.findByUsername(userData.username, userData.email);
         if (userExiste) {
             throw new Error('El nombre de usuario o correo electrónico ya están registrados');
         }
         userData.password = await hashPassword(userData.password);
-        userData.claveUsuario = await generateClave(userData.nombre, userData.apellido_paterno);
+        userData.claveUsuario = generateClave(userData.nombre, userData.apellidoPaterno);
+
         return await userRepository.save(userData);
     }
 
-    async cambioDatos(idUsuario, status) {
-        const status = (status === 'activo') ? 'inactivo' : 'activo';
-        return await userRepository.subirStatus(idUsuario, status);
+    async cambioDatos(idUsuario, statusString) {
+        const bitStatus = (statusString === 'activo' || statusString === '1') ? '1' : '0';
+        return await userRepository.updateStatus(idUsuario, bitStatus);
     }
-};
+}
 
 module.exports = new UserService();

@@ -1,13 +1,14 @@
-//Importa el framework de express para crear el servidor 
+// Importa el framework de express para crear el servidor 
 const express = require("express");
 
-//Importar las rutas
-const authRoutes = require("./routes/auth.routes");
+// Importar las rutas CORRECTAS del UserService
+const userRoutes = require("./routes/user.routes");
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/sicae/auth/api", authRoutes);
+// El prefijo correcto para el microservicio de usuarios
+app.use("/api/users", userRoutes);
 
 module.exports = app;
